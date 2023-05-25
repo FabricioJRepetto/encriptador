@@ -37,17 +37,26 @@
                     </div>
 
                     <div class="buttons-container">
-                        <button id='encode' class="button-primary">Encriptar</button>
-                        <button id='decode'>Desencriptar</button>
+                        <button id='encode' class="button-primary">
+                            <img src="assets/lock.svg" class="icon" />
+                            Encriptar
+                        </button>
+                        <button id='decode'>
+                            <img src="assets/key.svg" class="icon" />
+                            Desencriptar
+                        </button>
                     </div>
                 </div>
             </div>
 
             <div class="message-container">
                 <div id="message" class="message" style="display: none;">
-                    <p id="final-message"></p>
+                    <div id="final-message"></div>
 
-                    <button id="copy-button">Copiar</button>
+                    <button id="copy-button">
+                        <img src="assets/copy.svg" class="icon" />
+                        Copiar
+                    </button>
                 </div>
 
                 <div id='no-message' class="no-message" style="display: flex;">
@@ -60,8 +69,13 @@
 
         </section>
 
-        <footer>Fabricio Repetto · ALURA · 2023</footer>
     </main>
+
+    <footer>
+        <a href="https://fabricio-repetto.vercel.app" target="_blank">Fabricio Repetto</a> ·
+        <a href="https://github.com/FabricioJRepetto/encriptador" target="_blank">Repositorio</a>
+        · ALURA · 2023
+    </footer>
 </body>
 
 <script src="logic.js"></script>

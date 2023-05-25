@@ -1,6 +1,9 @@
 :root {
+    --blue: #0A3871;
+    --gray: #495057;
+
     background-color: #E5E5E5;
-    margin: 40px;
+    margin: 40px 40px 0px 40px;
     font-family: 'Inter', sans-serif;
 }
 
@@ -11,8 +14,14 @@ main {
 footer {
     padding: 10px;
     text-align: center;
-    color: #495057;
+    color: var(--gray);
     /* height: 40px; */
+    margin: auto;
+    position: relative;
+    bottom: 0;
+}
+a {
+    color: var(--blue);
 }
 
 section {
@@ -28,7 +37,6 @@ section {
 
     width: 120px;
 }
-
 
 .main {
     display: flex;
@@ -50,7 +58,7 @@ textarea {
     /* margin-top: 128px; */
     height: 100%;
 
-    color: #0A3871;
+    color: var(--blue);
     font-size: 2rem;
     font-family: inherit;
 }
@@ -58,7 +66,7 @@ textarea {
 .info {
     display: flex;
     gap: 8px;
-    color: #495057;
+    color: var(--gray);
     margin: 16px 0;
 }
 
@@ -75,10 +83,10 @@ button {
     cursor: pointer;
     box-sizing: border-box;
     background-color: #00000000;
-    color: #0A3871;
+    color: var(--blue);
     font-size: 1.2rem;
 
-    border: 1px solid #0A3871;
+    border: 1px solid var(--blue);
     border-radius: 24px;
 
     padding: 24px;
@@ -88,7 +96,7 @@ button {
 
 .button-primary {  
     color: white;
-    background-color: #0A3871;
+    background-color: var(--blue);
 }
 
 .message-container {
@@ -107,14 +115,19 @@ button {
 
 .message {
     height: 100%;
-    /* margin: 32px; */
     
     flex-direction: column;
     justify-content: space-between;
 }
+.message div {
+    margin-bottom: 32px;
+    height: 100%;
+    overflow: auto;
+    font-size: 1.2rem;
+}
 
 .no-message {
-    color: #495057;
+    color: var(--gray);
     /* margin: 32px; */
     text-align: center;
     
@@ -126,9 +139,46 @@ button {
 .no-message b {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #495057;
+    color: var(--gray);
 }
 
-@media (min-width: 768px) {
-    
+.icon {
+    min-height: 16px;
+}
+
+@media (max-width: 1035px) {
+    main {
+        height: max-content;
+        min-height: calc(100vh - 80px);
+    }
+    section {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+    textarea {
+        height: 50vh;
+    }
+    .menu {
+        justify-content: flex-start;
+    }
+    .main {
+        padding-top: 32px;
+    }
+    .message-container {
+        width: auto;
+    }
+    .message div {
+        height: fit-content;
+        overflow: unset;
+    }
+    .no-message img {
+        display: none;
+    }
+}
+
+@media (max-width: 790px) {
+    button {       
+        min-width: 100%;
+    }
 }

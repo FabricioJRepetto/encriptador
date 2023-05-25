@@ -27,6 +27,21 @@ const showMessage = () => {
     }
 }
 
+const typeMessage = (text) => {
+    const ele = finalMessageContainer
+    ele.textContent = ''
+
+    let i = 0
+    const typerInt = setInterval(() => {
+        ele.append(text[i], text[i + 1] || '')
+
+        i += 2
+        if (i >= text.length) {
+            clearInterval(typerInt)
+        }
+    }, 2);
+}
+
 const encodeMessage = () => {
     if (input?.value.length > 0 && finalMessageContainer) {
         // pasar input a minusculas
@@ -60,7 +75,8 @@ const encodeMessage = () => {
         // }        
 
         // setear mensaje final
-        finalMessageContainer.textContent = newMessage
+        // finalMessageContainer.textContent = newMessage
+        typeMessage(newMessage)
 
         // ocultar imagen y mostrar mensaje
         showMessage()
