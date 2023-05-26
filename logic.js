@@ -9,10 +9,10 @@ const encodeBtn = document.getElementById('encode'),
 let showingImage = true
 
 const replaceSpecialChars = (text) => {
-    let cleanText = text.replaceAll(/[àáäâ]/g, 'a')
+    let cleanText = text.replaceAll(/[àáäâã]/g, 'a')
         .replaceAll(/[èéëê]/g, 'e')
         .replaceAll(/[ìíïî]/g, 'i')
-        .replaceAll(/[òóöô]/g, 'o')
+        .replaceAll(/[òóöôõ]/g, 'o')
         .replaceAll(/[ùúüû]/g, 'u')
 
     return cleanText
